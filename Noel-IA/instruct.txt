@@ -1,0 +1,13 @@
+python C:\TensorFlow\models\research\object_detection\model_main_tf2.py /
+    --pipeline_config_path=my_pipeline.config /
+    --model_dir=trained_model /
+    --num_train_steps=10000 /
+    --sample_1_of_n_eval_examples=1 /
+    --alsologtostderr
+
+python C:\TensorFlow\models\research\object_detection\model_main_tf2.py --pipeline_config_path=my_pipeline.config --model_dir=training_output --trained_checkpoint_dir=training_output --output_directory=exported_model --alsologtostderr
+
+
+Para guardar el modelo:
+
+python C:\TensorFlow\models\research\object_detection\exporter_main_v2.py --input_type image_tensor --pipeline_config_path my_pipeline.config --trained_checkpoint_dir training_output --output_directory exported_model
